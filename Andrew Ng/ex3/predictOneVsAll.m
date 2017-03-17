@@ -30,7 +30,14 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+max_num =zeros(size(X, 1), 1);
+max_idx =zeros(size(X, 1), 1);
+pred = sigmoid(all_theta * X');
+# 10x401 5000x401 10X5000
 
+[max_num, max_idx] = max(pred, [], 1);
+
+p=max_idx';
 
 
 
