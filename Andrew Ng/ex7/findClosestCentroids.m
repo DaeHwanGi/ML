@@ -21,9 +21,20 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
+for i=1:size(X,1)
+    for j = 1 :size(centroids,1)
+        dist = sum((X(i,:) - centroids(j,:)).^2);
+        if(j == 1 )
+            min_dist = dist;
+            idx(i) = j;
 
-
-
+        else
+            if(dist < min_dist)
+                min_dist = dist;
+                idx(i) = j;
+            endif
+    end
+end
 
 
 
